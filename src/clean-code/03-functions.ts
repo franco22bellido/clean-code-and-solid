@@ -1,29 +1,51 @@
 (()=> {
 
   // función para obtener información de una pelicula por id
-  function getAllMovies( movieId : string )  {
-    console.log(movieId)
+  // puede ser getOne, findOne o findById
+  function findMovieById( id : string )  { 
+    console.log(id)
   }
   //función para obtener información de los actores de una pelicula - Actors o Cast // id = movieId getMovieCast
-  function getAllMovieActors(id :string) {
+  function findActorsByMovieId(id :string) {
     console.log({id})
   }
   //función para obtener el bio del actor por el id
-  function getUsuario(ActorId:string) {
-    console.log({ActorId})
+  function findActorBioById(id :string) {
+    console.log({id})
   }
   // Crear una pelicula
-  function movie(title: string, description: string, rating: number, cast: string) {
-    console.log({title, description, rating, cast})
+  interface Movie {
+    cast:        string;
+    description: string;
+    rating:      number; 
+    title:       string;
+  }
+  function createMovie(movie: Movie) {
+    console.log(movie)
   }
   //Crea un nuevo actor
-  function createActorIfActorNotExists( fullName: string, birthName: Date): boolean {
+  function checkFullName(fullName:string) {
+    console.log({fullName})
+    return true;
+  }
+  function craeteActor( fullName: string, birthName: Date): boolean {
     //tarea asincrona para verificar nombre
     //..
     //..
-    if(fullName === 'fernando' ) return false;
+    if( checkFullName(fullName) ) return false;
     console.log('crear actor')
     return true
   }
 
-})();
+  // Continutar
+  const getPayAmount = ({isDead = false, isSeparated = true, isRetired = false}): number => {
+  
+    if( isDead) return 1500;
+    
+    if( isSeparated) return 2500;
+    
+    return isRetired ? 3000 : 4000;
+}
+
+
+})()
