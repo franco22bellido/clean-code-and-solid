@@ -36,7 +36,7 @@ export interface Car {
         new Audi(2, 'Audi'),
         new Toyota(5),
         new Honda(5),
-        new Volvo(4)
+        new Volvo(4),
     ];
 
 
