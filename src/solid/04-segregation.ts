@@ -1,26 +1,25 @@
 interface Bird {
-    fly() : void;
     eat() : void;
-    run() : void;
+}
+interface FlyingBird {
+    fly() : void;
+}
+interface RunningBird{
+    run(): void;
+}
+interface SwimmerBird {
     swim(): void;
 }
 
-class Tucan implements Bird{
+class Tucan implements Bird, FlyingBird{
     public fly(): void{
         console.log('volando')
     }
     public eat(): void{
         console.log('comiendo')
     }
-    public run(): void {
-        console.log('corriendo')
-    }
 }
-class Humminbird implements Bird{
-
-    public run(): void {
-        console.log('corriendo')
-    }
+class Humminbird implements Bird, FlyingBird{
     public fly(): void{
         console.log('volando')
     }
@@ -29,30 +28,21 @@ class Humminbird implements Bird{
     }
 }
 
-class Ostrich implements Bird {
-    fly(): void {
-        throw new Error("esta ave no vuela.");
-    }
+class Ostrich implements Bird, RunningBird{
     eat(): void {
-        throw new Error("Method not implemented.");
+        console.log('comiendo')
     }
     run(): void {
-        throw new Error("Method not implemented.");
+        console.log('corriendo')
     }
 
 }
 
-class Penguin implements Bird {
-    fly(): void {
-        throw new Error("esta ave no vuela.");
-    }
+class Penguin implements Bird, SwimmerBird {
     eat(): void {
-        throw new Error("Method not implemented.");
+        console.log('comiendo')
     }
-    run(): void {
-        throw new Error("Method not implemented.");
-    }
-    public swim() {
+    swim(): void {
         console.log('nadando')
     }
 
